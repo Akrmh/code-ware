@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+    <style>
+        small {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="input" placeholder="Type something..." onkeydown="handleChange()">
+    <small class="error" id="errorMessage"></small>
+
+    <input type="text" id="input2" placeholder="Type something...">
+    <small class="error" id="errorMessage2"></small>
+    <script>
+        const input = document.querySelector('#input');
+        const error = document.querySelector('#errorMessage');
+
+        const input2 = document.querySelector('#input2');
+        const error2 = document.querySelector('#errorMessage2');
+
+        // input.addEventListener('input', () => {
+        //     if (input.value.trim() === "") {
+        //         error.textContent = "This field cannot be empty!";
+        //     } else {
+        //         error.textContent = "";
+        //     }
+        // });
+
+        input2.addEventListener('input', () => {
+            if (input.value.trim() === "") {
+                error2.textContent = "This field cannot be empty!";
+            } else {
+                error2.textContent = "";
+            }
+        });
+
+        const handleChange = () => {
+            if (input.value.trim() === "") {
+                error.textContent = "This field cannot be empty!";
+            } else {
+                error.textContent = "";
+            }
+        }
+    </script>
+</body>
+</html>
